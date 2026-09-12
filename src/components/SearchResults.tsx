@@ -1,9 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useMemo } from "react";
-import ItemCard from "./ItemCard";
+import ItemConclusion from "./ItemConclusion";
+import ItemRow from "./ItemRow";
 import SearchBox from "./SearchBox";
+import { getMunicipalityById } from "@/lib/municipality";
 import { searchItems } from "@/lib/search";
 
 /**
@@ -15,25 +18,40 @@ export default function SearchResults() {
   const searchParams = useSearchParams();
   const query = (searchParams.get("q") ?? "").trim();
   const results = useMemo(() => (query ? searchItems(query) : []), [query]);
+  const singleResult = results.length === 1 ? results[0] : undefined;
+  const singleMunicipality = singleResult ? getMunicipalityById(singleResult.item.municipality_id) : undefined;
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8">
-      <h1 className="text-2xl font-extrabold text-gray-900">検索結果</h1>
-      <div className="mt-6">
+    <div className="py-6">
+      <h1 className="text-xl font-bold text-gray-900 sm:text-2xl">検索結果</h1>
+      <div className="mt-5">
         <SearchBox defaultValue={query} />
       </div>
 
-      <div className="mt-8">
+      <div className="mt-6">
         {query === "" ? (
           <p className="text-sm text-gray-500">調べたいごみの品目名を入力してください。</p>
+        ) : singleResult && singleMunicipality ? (
+          <>
+            <p className="text-sm text-gray-500">{singleMunicipality.name}</p>
+            <h2 className="mt-0.5 text-lg font-bold text-gray-900">{singleResult.item.name}</h2>
+            <div className="mt-4">
+              <ItemConclusion item={singleResult.item} municipality={singleMunicipality} category={singleResult.category} />
+            </div>
+            <p className="mt-4 text-sm">
+              <Link href={singleResult.href} className="text-green-700 underline underline-offset-2 hover:text-green-800">
+                この品目のページを見る
+              </Link>
+            </p>
+          </>
         ) : results.length > 0 ? (
           <>
             <p className="text-sm text-gray-500">
               「{query}」の検索結果 {results.length}件
             </p>
-            <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+            <ul className="mt-3 divide-y divide-gray-200 border-y border-gray-200">
               {results.map((result) => (
-                <ItemCard
+                <ItemRow
                   key={`${result.item.municipality_id}-${result.item.id}`}
                   name={result.item.name}
                   href={result.href}
@@ -43,10 +61,10 @@ export default function SearchResults() {
                   municipalityName={result.municipalityName}
                 />
               ))}
-            </div>
+            </ul>
           </>
         ) : (
-          <div className="rounded-xl border border-gray-200 bg-gray-50 p-6 text-center">
+          <div className="border-t border-gray-200 pt-5">
             <p className="text-sm font-semibold text-gray-700">該当する品目が見つかりませんでした</p>
             <p className="mt-2 text-sm text-gray-500">
               「ソファ」→「ソファー」のように、別の呼び方でも検索してみてください。

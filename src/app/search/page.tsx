@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import PageShell from "@/components/PageShell";
 import SearchResults from "@/components/SearchResults";
 
 export const metadata: Metadata = {
@@ -9,16 +10,18 @@ export const metadata: Metadata = {
 
 function SearchFallback() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8">
-      <h1 className="text-2xl font-extrabold text-gray-900">検索結果</h1>
+    <div className="py-6">
+      <h1 className="text-xl font-bold text-gray-900 sm:text-2xl">検索結果</h1>
     </div>
   );
 }
 
 export default function SearchPage() {
   return (
-    <Suspense fallback={<SearchFallback />}>
-      <SearchResults />
-    </Suspense>
+    <PageShell>
+      <Suspense fallback={<SearchFallback />}>
+        <SearchResults />
+      </Suspense>
+    </PageShell>
   );
 }

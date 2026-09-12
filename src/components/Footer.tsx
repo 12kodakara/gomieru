@@ -16,7 +16,7 @@ const POLICY_LINKS: { name: string; href: string }[] = [
 export default function Footer() {
   return (
     <footer className="border-t border-gray-100 bg-gray-50">
-      <div className="mx-auto max-w-3xl space-y-4 px-4 py-8">
+      <div className="mx-auto max-w-5xl space-y-4 px-4 py-8 sm:px-6">
         <Disclaimer />
         <nav className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-gray-500">
           <Link href="/" className="hover:text-green-700">

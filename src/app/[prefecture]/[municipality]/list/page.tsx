@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ItemLinkGrid from "@/components/ItemLinkGrid";
+import PageShell from "@/components/PageShell";
 import { categoryColorClasses } from "@/lib/categoryColor";
 import { getItemPath, getItemsByCategory, getItemsByMunicipality } from "@/lib/items";
 import { getMunicipalities, getMunicipalityById, getPrefectureById } from "@/lib/municipality";
@@ -42,49 +43,41 @@ export default async function ItemListPage({ params }: ItemListPageProps) {
   const totalCount = getItemsByMunicipality(municipality.id).length;
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8">
-      <Breadcrumbs
-        items={[
-          { name: "トップ", href: "/" },
-          { name: prefecture?.name ?? prefectureId, href: `/${prefectureId}/` },
-          { name: municipality.name, href: `/${prefectureId}/${municipalityId}/` },
-          { name: "品目一覧" },
-        ]}
-      />
-      <h1 className="mt-3 text-2xl font-extrabold text-gray-900">{municipality.name}のごみ品目一覧</h1>
-      <p className="mt-2 text-sm text-gray-500">確認できている品目は全{totalCount}件です。カテゴリごとにまとめています。</p>
-      <p className="mt-1 text-xs text-gray-400">品目名を選ぶと、捨て方と注意点を確認できます。</p>
+    <PageShell>
+      <div className="py-6">
+        <Breadcrumbs
+          items={[
+            { name: "トップ", href: "/" },
+            { name: prefecture?.name ?? prefectureId, href: `/${prefectureId}/` },
+            { name: municipality.name, href: `/${prefectureId}/${municipalityId}/` },
+            { name: "品目一覧" },
+          ]}
+        />
+        <h1 className="mt-3 text-xl font-bold text-gray-900 sm:text-2xl">{municipality.name}のごみ品目一覧</h1>
+        <p className="mt-2 text-sm text-gray-600">確認できている品目は全{totalCount}件です。カテゴリごとにまとめています。</p>
+        <p className="mt-1 text-xs text-gray-400">品目名を選ぶと、捨て方と注意点を確認できます。</p>
 
-      <div className="mt-8 space-y-10">
-        {municipality.categories.map((category) => {
-          const items = getItemsByCategory(municipality.id, category.id);
-          if (items.length === 0) return null;
-          const colors = categoryColorClasses[category.color];
+        <div className="mt-6 space-y-8">
+          {municipality.categories.map((category) => {
+            const items = getItemsByCategory(municipality.id, category.id);
+            if (items.length === 0) return null;
+            const colors = categoryColorClasses[category.color];
 
-          return (
-            <section key={category.id}>
-              <div className={`flex items-center gap-2 rounded-lg border-l-4 ${colors.border} bg-gray-50 px-3 py-2`}>
-                <span className={`inline-block rounded-full px-2.5 py-1 text-xs font-bold ${colors.bg} ${colors.text}`}>
+            return (
+              <section key={category.id} id={`cat-${category.id}`} className="scroll-mt-16">
+                <h2 className={`flex items-center gap-2 border-l-2 pl-2 text-sm font-bold text-gray-900 ${colors.border}`}>
+                  <span aria-hidden="true" className={`h-1.5 w-1.5 shrink-0 rounded-full ${colors.dot}`} />
                   {category.name}
-                </span>
-                <span className="text-xs text-gray-400">{items.length}件</span>
-              </div>
-              <ul className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2.5 sm:grid-cols-3">
-                {items.map((item) => (
-                  <li key={item.id}>
-                    <Link
-                      href={getItemPath(item, municipality)}
-                      className="block rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm text-gray-700 transition hover:border-green-400 hover:bg-green-50 hover:text-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          );
-        })}
+                  <span className="text-xs font-normal text-gray-400">{items.length}件</span>
+                </h2>
+                <div className="mt-3">
+                  <ItemLinkGrid items={items.map((item) => ({ name: item.name, href: getItemPath(item, municipality) }))} />
+                </div>
+              </section>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </PageShell>
   );
 }

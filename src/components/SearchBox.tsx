@@ -93,34 +93,45 @@ export default function SearchBox({ placeholder, defaultValue }: SearchBoxProps)
   return (
     <form onSubmit={handleSubmit} className="relative w-full" role="search">
       <div className="flex w-full flex-col gap-2 sm:flex-row">
-        <input
-          type="search"
-          value={value}
-          onChange={(event) => {
-            setValue(event.target.value);
-            setIsOpen(true);
-            setActiveIndex(-1);
-          }}
-          onFocus={() => setIsOpen(true)}
-          onBlur={() => {
-            // クリック・タップの選択を先に処理させるため、少し遅らせて閉じる。
-            setTimeout(() => setIsOpen(false), 150);
-          }}
-          onKeyDown={handleKeyDown}
-          placeholder={placeholder ?? "電子レンジ、布団、モバイルバッテリー…"}
-          aria-label="ごみの品目を検索"
-          role="combobox"
-          aria-expanded={showDropdown}
-          aria-controls={listboxId}
-          aria-autocomplete="list"
-          aria-activedescendant={activeIndex >= 0 ? `${listboxId}-${activeIndex}` : undefined}
-          autoComplete="off"
-          className="w-full rounded-xl border-2 border-green-200 bg-white px-5 py-4 text-base text-gray-900 shadow-sm outline-none placeholder:text-gray-400 focus:border-green-500"
-        />
+        <div className="relative w-full">
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 20 20"
+            fill="none"
+            className="pointer-events-none absolute left-4 top-1/2 h-4.5 w-4.5 -translate-y-1/2 text-gray-400"
+          >
+            <circle cx="9" cy="9" r="6.5" stroke="currentColor" strokeWidth="1.6" />
+            <path d="M13.8 13.8 17.5 17.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+          </svg>
+          <input
+            type="search"
+            value={value}
+            onChange={(event) => {
+              setValue(event.target.value);
+              setIsOpen(true);
+              setActiveIndex(-1);
+            }}
+            onFocus={() => setIsOpen(true)}
+            onBlur={() => {
+              // クリック・タップの選択を先に処理させるため、少し遅らせて閉じる。
+              setTimeout(() => setIsOpen(false), 150);
+            }}
+            onKeyDown={handleKeyDown}
+            placeholder={placeholder ?? "捨てたいものを入力（例：布団、テレビ、モバイルバッテリー）"}
+            aria-label="ごみの品目を検索"
+            role="combobox"
+            aria-expanded={showDropdown}
+            aria-controls={listboxId}
+            aria-autocomplete="list"
+            aria-activedescendant={activeIndex >= 0 ? `${listboxId}-${activeIndex}` : undefined}
+            autoComplete="off"
+            className="w-full rounded-lg border border-gray-300 bg-white py-3.5 pl-11 pr-4 text-base text-gray-900 outline-none placeholder:text-gray-400 focus:border-green-600 focus:ring-1 focus:ring-green-600"
+          />
+        </div>
 
         <button
           type="submit"
-          className="shrink-0 rounded-xl bg-green-600 px-6 py-4 text-base font-bold text-white shadow-sm transition hover:bg-green-700 active:bg-green-800"
+          className="shrink-0 rounded-md bg-green-700 px-6 py-3.5 text-base font-bold text-white transition hover:bg-green-800 active:bg-green-900"
         >
           捨て方を調べる
         </button>
@@ -130,7 +141,7 @@ export default function SearchBox({ placeholder, defaultValue }: SearchBoxProps)
         <ul
           id={listboxId}
           role="listbox"
-          className="absolute inset-x-0 top-full z-50 mt-1.5 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-lg"
+          className="absolute inset-x-0 top-full z-50 mt-1.5 overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm"
         >
           {suggestions.map((suggestion, index) => (
             <li key={suggestion.id} role="presentation">

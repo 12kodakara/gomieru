@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import PageShell from "@/components/PageShell";
 import { SITE_NAME } from "@/lib/site";
 
 const TITLE = "プライバシーポリシー";
@@ -15,14 +16,15 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8">
-      <Breadcrumbs items={[{ name: "トップ", href: "/" }, { name: TITLE }]} />
-      <h1 className="mt-3 text-2xl font-extrabold text-gray-900">プライバシーポリシー</h1>
-      <p className="mt-2 text-sm text-gray-500">
-        「{SITE_NAME}」（以下「当サイト」といいます）における、利用者情報の取り扱いについて説明します。
-      </p>
+    <PageShell>
+      <div className="py-6">
+        <Breadcrumbs items={[{ name: "トップ", href: "/" }, { name: TITLE }]} />
+        <h1 className="mt-3 text-xl font-bold text-gray-900 sm:text-2xl">プライバシーポリシー</h1>
+        <p className="mt-2 text-sm text-gray-500">
+          「{SITE_NAME}」（以下「当サイト」といいます）における、利用者情報の取り扱いについて説明します。
+        </p>
 
-      <div className="mt-6 space-y-6 text-sm leading-relaxed text-gray-700">
+        <div className="mt-6 space-y-6 text-sm leading-relaxed text-gray-700">
         <section>
           <h2 className="text-base font-bold text-gray-900">個人情報の取り扱いについて</h2>
           <p className="mt-2">
@@ -97,7 +99,8 @@ export default function PrivacyPage() {
             よりご連絡ください。
           </p>
         </section>
+        </div>
       </div>
-    </div>
+    </PageShell>
   );
 }

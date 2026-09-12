@@ -36,6 +36,11 @@ export function getPublishedItems(): WasteItem[] {
   return allItemsRaw.filter(isPublished);
 }
 
+/** トップページ・サイドナビの「よく調べる品目」表示用に、先頭N件のverified品目を返す。 */
+export function getPopularItems(limit: number): WasteItem[] {
+  return getPublishedItems().slice(0, limit);
+}
+
 /** 指定自治体のverified品目のみ。 */
 export function getItemsByMunicipality(municipalityId: string): WasteItem[] {
   return (itemsByMunicipality[municipalityId] ?? []).filter(isPublished);
@@ -43,6 +48,37 @@ export function getItemsByMunicipality(municipalityId: string): WasteItem[] {
 
 export function getItemsByCategory(municipalityId: string, categoryId: string): WasteItem[] {
   return getItemsByMunicipality(municipalityId).filter((item) => item.category === categoryId);
+}
+
+/**
+ * 「燃えるごみ」「燃えないごみ」「市で収集しないもの」は対象範囲が広く、
+ * 同じカテゴリというだけでは関連性が薄い組み合わせになりやすい
+ * (例:「布団」と「生ごみ」が同じ「燃えるごみ」)。
+ * これらのカテゴリでは、品目名・別名が実際に重なるものだけを関連品目として扱う。
+ */
+const BROAD_CATEGORY_IDS = new Set(["moeru", "moenai", "not-collected"]);
+
+function normalizeForRelation(value: string): string {
+  return value.replace(/[\s・･]/g, "");
+}
+
+function isNameRelated(a: WasteItem, b: WasteItem): boolean {
+  const aTerms = [a.name, ...a.aliases].map(normalizeForRelation).filter((term) => term.length >= 2);
+  const bTerms = [b.name, ...b.aliases].map(normalizeForRelation).filter((term) => term.length >= 2);
+  return aTerms.some((at) => bTerms.some((bt) => at.includes(bt) || bt.includes(at)));
+}
+
+/**
+ * 品目詳細ページ「関連する品目」用。同カテゴリ・同自治体・verified品目を基本とし、
+ * 対象範囲が広いカテゴリでは名前・別名が実際に重なるものだけにさらに絞り込む。
+ * 適切な候補がなければ空配列を返し、無理に件数を埋めない。
+ */
+export function getRelatedItems(item: WasteItem, limit: number): WasteItem[] {
+  const sameCategory = getItemsByCategory(item.municipality_id, item.category).filter((other) => other.id !== item.id);
+  const candidates = BROAD_CATEGORY_IDS.has(item.category)
+    ? sameCategory.filter((other) => isNameRelated(item, other))
+    : sameCategory;
+  return candidates.slice(0, limit);
 }
 
 /** verified品目のみ返す。draftはnotFound相当として扱われる。 */

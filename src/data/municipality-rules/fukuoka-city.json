@@ -1,0 +1,26 @@
+{
+  "bulkyWaste": {
+    "steps": [
+      "電話・インターネット・LINEのいずれかで粗大ごみ受付に申し込む",
+      "案内された金額の粗大ごみ処理券をコンビニ等で購入する",
+      "指定された収集日・場所に出す"
+    ],
+    "notes": "電話受付は092-731-1153(月〜土 9:00〜17:00)です。自分で処分場へ持ち込む場合は、自己搬入ごみ事前受付センター(092-433-8234)に予約のうえ搬入してください(10kgごとに140円)。一度に出せる粗大ごみは10点までです。",
+    "source_title": "粗大ごみの出し方 - 福岡市",
+    "source_url": "https://www.city.fukuoka.lg.jp/kankyo/kateigomi/life/katei-bunbetsu/sodaigomi.html",
+    "source_checked_at": "2026-09-12"
+  },
+  "homeApplianceRecycling": {
+    "description": "(1)買い替える際に新しい家電を購入する小売店に引き取ってもらう、(2)その家電を購入した小売店に引き取ってもらう、(3)該当する小売店がない場合はヤマダデンキなどの回収協力店や市と協定した事業者に依頼する、(4)自分で運ぶ場合は郵便局で家電リサイクル券を購入し指定引取場所へ持ち込む、のいずれかの方法で処分してください。",
+    "notes": "処分にはリサイクル料金と収集運搬料金が必要です。料金は品目・機種・メーカーにより異なります。詳細は一般財団法人家電製品協会(0120-319640)で確認できます。",
+    "source_title": "家電リサイクル法対象品｜福岡市ごみと資源の分け方・出し方情報サイト",
+    "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/rule/recyclingLaw",
+    "source_checked_at": "2026-09-12"
+  },
+  "smallApplianceBox": {
+    "description": "区役所や公民館等に設置している小型家電回収ボックスへ出してください。回収ボックスの投入口はヨコ25cm×タテ8.5cmです。",
+    "source_title": "小型家電｜福岡市ごみと資源の分け方・出し方情報サイト",
+    "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/division:6",
+    "source_checked_at": "2026-09-12"
+  }
+}

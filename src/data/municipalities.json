@@ -1,0 +1,18 @@
+[
+  {
+    "id": "fukuoka-city",
+    "prefecture_id": "fukuoka",
+    "name": "福岡市",
+    "name_kana": "ふくおかし",
+    "categories": [
+      { "id": "moeru", "name": "燃えるごみ", "color": "red" },
+      { "id": "moenai", "name": "燃えないごみ", "color": "blue" },
+      { "id": "recycle", "name": "空きびん・ペットボトル", "color": "green" },
+      { "id": "sodai", "name": "粗大ごみ", "color": "orange" },
+      { "id": "kogata-kaden", "name": "小型家電", "color": "purple" },
+      { "id": "kaden-recycle", "name": "家電リサイクル", "color": "purple" },
+      { "id": "not-collected", "name": "市で収集しないもの", "color": "gray" },
+      { "id": "koshi", "name": "古紙", "color": "green" }
+    ]
+  }
+]

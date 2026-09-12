@@ -3,6 +3,10 @@ import { getItemPath, getItemsByMunicipality } from "@/lib/items";
 import { getMunicipalities, getPrefectures } from "@/lib/municipality";
 import { SITE_URL } from "@/lib/site";
 
+// 静的エクスポート(output: "export")では、メタデータルートも
+// 事前に静的生成できることを明示する必要がある。内容は変更しない。
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [
     {

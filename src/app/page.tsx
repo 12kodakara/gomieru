@@ -1,8 +1,10 @@
 import Link from "next/link";
+import IconBadge from "@/components/IconBadge";
 import ItemLinkGrid from "@/components/ItemLinkGrid";
 import PageShell from "@/components/PageShell";
 import SearchBox from "@/components/SearchBox";
 import { categoryColorClasses } from "@/lib/categoryColor";
+import { categoryIconComponents, itemIconComponents } from "@/lib/iconMap";
 import { getItemPath, getItemsByMunicipality, getPopularItems } from "@/lib/items";
 import {
   getCategoryById,
@@ -101,18 +103,26 @@ export default function HomePage() {
         {fukuokaCity && (
           <section className="mt-8">
             <h2 className="border-l-2 border-green-700 pl-2 text-sm font-bold text-gray-900">ごみの種類</h2>
-            <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-3">
-              {fukuokaCity.categories.map((category) => (
-                <li key={category.id}>
-                  <Link
-                    href={`/fukuoka/fukuoka-city/?category=${category.id}`}
-                    className="flex items-center gap-1.5 text-sm text-gray-700 hover:text-green-700"
-                  >
-                    <span aria-hidden="true" className={`h-2 w-2 shrink-0 rounded-full ${categoryColorClasses[category.color].dot}`} />
-                    {category.name}
-                  </Link>
-                </li>
-              ))}
+            <ul className="mt-3 grid grid-cols-2 gap-x-4 gap-y-3 sm:grid-cols-3">
+              {fukuokaCity.categories.map((category) => {
+                const colors = categoryColorClasses[category.color];
+                const Icon = categoryIconComponents[category.id];
+                return (
+                  <li key={category.id}>
+                    <Link
+                      href={`/fukuoka/fukuoka-city/?category=${category.id}`}
+                      className="flex items-center gap-2.5 text-sm text-gray-700 hover:text-green-700"
+                    >
+                      {Icon ? (
+                        <IconBadge icon={Icon} bgClassName={colors.iconBg} colorClassName={colors.text} />
+                      ) : (
+                        <span aria-hidden="true" className={`h-2 w-2 shrink-0 rounded-full ${colors.dot}`} />
+                      )}
+                      {category.name}
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </section>
         )}
@@ -132,6 +142,7 @@ export default function HomePage() {
                       href: getItemPath(item, municipality),
                       categoryName: category?.name,
                       categoryColor: category?.color,
+                      icon: itemIconComponents[item.id] ?? (category ? categoryIconComponents[category.id] : undefined),
                     },
                   ];
                 })}

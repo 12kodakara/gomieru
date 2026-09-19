@@ -31,9 +31,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build (static export for GitHub Pages)
-        env:
-          GITHUB_PAGES: "true"
+      - name: Build (static export for gomieru.jp)
         run: npm run build
 
       - name: Setup Pages

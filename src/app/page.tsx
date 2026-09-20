@@ -13,7 +13,7 @@ import {
   getMunicipalityPath,
   getPrefectures,
 } from "@/lib/municipality";
-import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
+import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/site";
 
 export const metadata = {
   title: { absolute: `${SITE_TAGLINE}｜${SITE_NAME}` },
@@ -30,8 +30,26 @@ export default function HomePage() {
   const fukuokaCityItemCount = getItemsByMunicipality("fukuoka-city").length;
   const fukuokaCity = getMunicipalityById("fukuoka-city");
 
+  // サイト内検索(/search/?q=...)が実際に機能していることを確認したうえで設定する
+  // WebSite + SearchAction。Googleのsitelinks検索ボックスの対象になり得る。
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE_NAME,
+    url: `${SITE_URL}/`,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${SITE_URL}/search/?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   return (
     <PageShell>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
       <div className="py-6">
         <div className="rounded-md border border-gray-200 bg-gray-50 p-5 sm:p-6">
           <h1 className="text-xl font-bold leading-snug text-gray-900 sm:text-2xl md:text-3xl">

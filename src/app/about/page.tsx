@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageShell from "@/components/PageShell";
-import { SITE_NAME } from "@/lib/site";
+import { SITE_NAME, buildOpenGraph } from "@/lib/site";
 
 const TITLE = "このサイトについて";
 const DESCRIPTION = `${SITE_NAME}がどのようなサイトか、情報の集め方や取り扱い方針をご案内します。`;
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: "/about/" },
-  openGraph: { title: TITLE, description: DESCRIPTION },
+  openGraph: buildOpenGraph(TITLE, DESCRIPTION),
 };
 
 export default function AboutPage() {

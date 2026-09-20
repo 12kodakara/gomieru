@@ -6,6 +6,7 @@ import PageShell from "@/components/PageShell";
 import SearchBox from "@/components/SearchBox";
 import { getItemById, getItemsByMunicipality } from "@/lib/items";
 import { getCategoryById, getMunicipalities, getMunicipalityById, getPrefectureById } from "@/lib/municipality";
+import { buildOpenGraph } from "@/lib/site";
 
 interface ItemPageProps {
   params: Promise<{ prefecture: string; municipality: string; item: string }>;
@@ -30,14 +31,20 @@ export async function generateMetadata({ params }: ItemPageProps): Promise<Metad
   if (!item) return {};
 
   const category = getCategoryById(municipality, item.category);
-  const title = `${municipality.name}で${item.name}を捨てる方法`;
-  const description = `${municipality.name}での${item.name}の捨て方は「${category?.name ?? "-"}」です。出し方・注意点・公式情報をまとめて確認できます。`;
+  // 品目ページ本文の「結論」欄と同じ考え方で、disposal_methodがあればそちらを優先する
+  // (categoryの名称より具体的なため)。H1と同じ語順にすることでtitle/H1の一貫性を保つ。
+  const conclusionText = item.disposal_method ?? category?.name ?? "分類情報準備中";
+  const title = `${item.name}の捨て方（${municipality.name}）`;
+  const description =
+    item.conditions && item.conditions.length > 0
+      ? `${municipality.name}で${item.name}を捨てる場合、基本の分別は「${conclusionText}」です。条件によって分別が変わるケースも含め、出し方・注意点・${municipality.name}の公式情報をまとめて確認できます。`
+      : `${municipality.name}で${item.name}を捨てる場合の分別は「${conclusionText}」です。具体的な出し方や注意点、${municipality.name}の公式情報への案内をまとめて確認できます。`;
 
   return {
     title,
     description,
     alternates: { canonical: `/${prefectureId}/${municipalityId}/${itemId}/` },
-    openGraph: { title, description },
+    openGraph: buildOpenGraph(title, description),
   };
 }
 

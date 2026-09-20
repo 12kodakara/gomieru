@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageShell from "@/components/PageShell";
 import { getMunicipalitiesByPrefecture, getPrefectureById, getPrefectures } from "@/lib/municipality";
+import { buildOpenGraph } from "@/lib/site";
 
 interface PrefecturePageProps {
   params: Promise<{ prefecture: string }>;
@@ -25,7 +26,7 @@ export async function generateMetadata({ params }: PrefecturePageProps): Promise
     title,
     description,
     alternates: { canonical: `/${prefecture.id}/` },
-    openGraph: { title, description },
+    openGraph: buildOpenGraph(title, description),
   };
 }
 

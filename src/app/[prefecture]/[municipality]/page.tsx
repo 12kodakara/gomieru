@@ -9,6 +9,7 @@ import { categoryColorClasses } from "@/lib/categoryColor";
 import { getCategoryDescription } from "@/lib/categoryDescriptions";
 import { getMunicipalities, getMunicipalityById, getPrefectureById } from "@/lib/municipality";
 import { getMunicipalityBasicInfo } from "@/lib/municipalityInfo";
+import { buildOpenGraph } from "@/lib/site";
 
 interface MunicipalityPageProps {
   params: Promise<{ prefecture: string; municipality: string }>;
@@ -33,7 +34,7 @@ export async function generateMetadata({ params }: MunicipalityPageProps): Promi
     title,
     description,
     alternates: { canonical: `/${prefectureId}/${municipalityId}/` },
-    openGraph: { title, description },
+    openGraph: buildOpenGraph(title, description),
   };
 }
 

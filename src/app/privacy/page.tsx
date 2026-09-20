@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageShell from "@/components/PageShell";
-import { SITE_NAME } from "@/lib/site";
+import { SITE_NAME, buildOpenGraph } from "@/lib/site";
 
 const TITLE = "プライバシーポリシー";
 const DESCRIPTION = `${SITE_NAME}における個人情報の取り扱い、アクセス解析・広告配信の可能性、Cookieの利用等についてご案内します。`;
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: "/privacy/" },
-  openGraph: { title: TITLE, description: DESCRIPTION },
+  openGraph: buildOpenGraph(TITLE, DESCRIPTION),
 };
 
 export default function PrivacyPage() {

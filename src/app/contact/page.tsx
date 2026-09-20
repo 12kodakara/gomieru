@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageShell from "@/components/PageShell";
-import { CONTACT_EMAIL, SITE_NAME } from "@/lib/site";
+import { CONTACT_EMAIL, SITE_NAME, buildOpenGraph } from "@/lib/site";
 
 const TITLE = "お問い合わせ";
 const DESCRIPTION = `${SITE_NAME}の掲載情報についてのご指摘・お問い合わせ方法をご案内します。`;
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: { canonical: "/contact/" },
-  openGraph: { title: TITLE, description: DESCRIPTION },
+  openGraph: buildOpenGraph(TITLE, DESCRIPTION),
 };
 
 export default function ContactPage() {

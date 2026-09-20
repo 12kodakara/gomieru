@@ -6,6 +6,7 @@ import PageShell from "@/components/PageShell";
 import { categoryColorClasses } from "@/lib/categoryColor";
 import { getItemPath, getItemsByCategory, getItemsByMunicipality } from "@/lib/items";
 import { getMunicipalities, getMunicipalityById, getPrefectureById } from "@/lib/municipality";
+import { buildOpenGraph } from "@/lib/site";
 
 interface ItemListPageProps {
   params: Promise<{ prefecture: string; municipality: string }>;
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }: ItemListPageProps): Promise<M
     title,
     description,
     alternates: { canonical: `/${prefectureId}/${municipalityId}/list/` },
-    openGraph: { title, description },
+    openGraph: buildOpenGraph(title, description),
   };
 }
 

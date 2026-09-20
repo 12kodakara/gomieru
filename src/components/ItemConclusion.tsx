@@ -11,7 +11,7 @@ interface ItemConclusionProps {
   category?: Category;
 }
 
-const MAX_RELATED_ITEMS = 6;
+const MAX_RELATED_ITEMS = 4;
 
 // 結論文字が長い場合でもスマホ幅ではみ出さないよう調整する。
 function getConclusionTextSizeClass(text: string): string {

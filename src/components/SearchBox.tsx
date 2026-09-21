@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useId, useMemo, useState, type FormEvent, type KeyboardEvent } from "react";
-import { getSuggestionIndex, normalizeQuery, type SearchSuggestion } from "@/lib/search";
+import { getSuggestionIndex, isSearchDisambiguationExcluded, normalizeQuery, type SearchSuggestion } from "@/lib/search";
 
 // 品目データは小規模(100件程度)なため、モジュール読み込み時に一度だけ生成して使い回す。
 // レンダー中にrefへ書き込むと react-hooks/refs に抵触するため、ここでキャッシュする。
@@ -36,6 +36,7 @@ export default function SearchBox({ placeholder, defaultValue }: SearchBoxProps)
     // 3=aliasに一致 のみ。いずれにも一致しない候補は除外する。
     const matches: { suggestion: SearchSuggestion; score: number }[] = [];
     for (const suggestion of loadSuggestionIndex()) {
+      if (isSearchDisambiguationExcluded(suggestion.id, query)) continue;
       const name = normalizeQuery(suggestion.name);
       if (name === query) {
         matches.push({ suggestion, score: 0 });

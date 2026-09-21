@@ -37,12 +37,31 @@ function isMatch(item: WasteItem, query: string): boolean {
   return candidates.some((candidate) => candidate.includes(query) || query.includes(candidate));
 }
 
+/**
+ * 短い語が別品目の複合alias(またはその逆)に偶然含まれることで発生する、
+ * 無関係な品目への誤誘導を防ぐための個別ケース限定の除外リスト。
+ * 例:「デスク」は机のaliasだが、パソコンのalias「デスクトップパソコン」にも
+ * 部分一致してしまうため、この検索語(完全一致)に限りパソコンを除外する。
+ * 部分一致ロジック自体(isMatch)は変更せず、この4語だけに影響する局所的な調整。
+ */
+const SEARCH_DISAMBIGUATION_EXCLUDE_IDS: Record<string, string[]> = {
+  [normalizeQuery("デスク")]: ["pc"],
+  [normalizeQuery("デスクトップパソコン")]: ["desk"],
+  [normalizeQuery("ノート")]: ["pc"],
+  [normalizeQuery("ノートパソコン")]: ["notebook"],
+};
+
+export function isSearchDisambiguationExcluded(itemId: string, normalizedQuery: string): boolean {
+  const excludeIds = SEARCH_DISAMBIGUATION_EXCLUDE_IDS[normalizedQuery];
+  return excludeIds ? excludeIds.includes(itemId) : false;
+}
+
 export function searchItems(rawQuery: string): SearchResult[] {
   const query = normalizeQuery(rawQuery);
   if (!query) return [];
 
   return getPublishedItems()
-    .filter((item) => isMatch(item, query))
+    .filter((item) => isMatch(item, query) && !isSearchDisambiguationExcluded(item.id, query))
     .map((item) => {
       const municipality = getMunicipalityById(item.municipality_id);
       const category = municipality?.categories.find((c) => c.id === item.category);

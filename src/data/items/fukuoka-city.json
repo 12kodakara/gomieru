@@ -2359,5 +2359,45 @@
     "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E4%B8%89%E8%BC%AA%E8%BB%8A",
     "source_checked_at": "2026-09-21",
     "data_status": "verified"
+  },
+  {
+    "id": "sewing-machine",
+    "name": "ミシン",
+    "aliases": [],
+    "category": "sodai",
+    "disposal_method": "粗大ごみ",
+    "conditions": [
+      {
+        "condition": "指定袋に入って口が結べる大きさ・重さの場合",
+        "disposal_method": "燃えないごみ"
+      }
+    ],
+    "municipality_id": "fukuoka-city",
+    "description": "「粗大ごみ」として出してください。",
+    "notes": "指定袋に入って口が結べる大きさ・重さであれば「燃えないごみ」として出せます。",
+    "source_title": "ミシン｜福岡市ごみと資源の分け方・出し方情報サイト（品目検索）",
+    "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E3%83%9F%E3%82%B7%E3%83%B3",
+    "source_checked_at": "2026-09-21",
+    "data_status": "verified"
+  },
+  {
+    "id": "fishing-rod",
+    "name": "釣り竿",
+    "aliases": [],
+    "category": "moeru",
+    "disposal_method": "燃えるごみ",
+    "conditions": [
+      {
+        "condition": "グラスファイバー・FRP製の場合",
+        "disposal_method": "燃えないごみ"
+      }
+    ],
+    "municipality_id": "fukuoka-city",
+    "description": "竹・カーボン・樹脂製の釣り竿は「燃えるごみ」として出してください。",
+    "notes": "グラスファイバー・FRP製の釣り竿は「燃えないごみ」です。",
+    "source_title": "釣り竿｜福岡市ごみと資源の分け方・出し方情報サイト（品目検索）",
+    "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E9%87%A3%E3%82%8A%E7%AB%BF",
+    "source_checked_at": "2026-09-21",
+    "data_status": "verified"
   }
 ]

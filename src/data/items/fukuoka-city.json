@@ -1527,17 +1527,6 @@
     "draft_reason": "品目検索キーワード「バケツ」で結果が得られず、は行の品目一覧ページ(1・2ページ目)にも掲載がなかったため、分類を確認できなかった"
   },
   {
-    "id": "helmet",
-    "name": "ヘルメット",
-    "aliases": [],
-    "category": "moenai",
-    "municipality_id": "fukuoka-city",
-    "description": "「粗大ごみ」または「燃えないごみ」に分類される可能性がありますが、福岡市公式サイトの品目検索・は行一覧(1・2ページ目)のいずれでもヘルメット単体の記載を確認できませんでした。",
-    "notes": "断定を避けています。",
-    "data_status": "draft",
-    "draft_reason": "品目検索キーワード「ヘルメット」で結果が得られず、は行の品目一覧ページ(1・2ページ目)にも掲載がなかったため、分類を確認できなかった"
-  },
-  {
     "id": "window-screen",
     "name": "網戸",
     "aliases": ["あみど"],
@@ -1890,6 +1879,67 @@
     "notes": "乾電池・充電式電池とは処分方法が異なります。乾電池は「燃えないごみ」、充電式電池(ニカド電池・ニッケル水素電池等)は「小型充電式電池回収」です。",
     "source_title": "ボタン型電池｜福岡市ごみと資源の分け方・出し方情報サイト（品目検索）",
     "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E3%83%9C%E3%82%BF%E3%83%B3%E9%9B%BB%E6%B1%A0",
+    "source_checked_at": "2026-09-21",
+    "data_status": "verified"
+  },
+  {
+    "id": "game-console",
+    "name": "ゲーム機",
+    "aliases": [],
+    "category": "kogata-kaden",
+    "disposal_method": "小型家電回収ボックスへ",
+    "conditions": [
+      {
+        "condition": "回収ボックスの投入口(ヨコ25cm×タテ8.5cm)に入らない大きさの場合",
+        "disposal_method": "燃えないごみ"
+      }
+    ],
+    "municipality_rule_refs": ["smallApplianceBox"],
+    "municipality_id": "fukuoka-city",
+    "description": "ゲーム機は「小型家電」として区役所や公民館等の回収ボックスへ出してください。",
+    "notes": "特記事項はありません。",
+    "source_title": "ゲーム機｜福岡市ごみと資源の分け方・出し方情報サイト（品目検索）",
+    "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E3%82%B2%E3%83%BC%E3%83%A0%E6%A9%9F",
+    "source_checked_at": "2026-09-21",
+    "data_status": "verified"
+  },
+  {
+    "id": "child-car-seat",
+    "name": "チャイルドシート",
+    "aliases": [],
+    "category": "sodai",
+    "disposal_method": "粗大ごみ",
+    "conditions": [
+      {
+        "condition": "指定袋に入って口が結べる大きさ・重さの場合",
+        "disposal_method": "燃えないごみ"
+      }
+    ],
+    "municipality_id": "fukuoka-city",
+    "description": "「粗大ごみ」として出してください。",
+    "notes": "指定袋に入って口が結べる大きさ・重さであれば「燃えないごみ」として出せます。",
+    "source_title": "チャイルドシート｜福岡市ごみと資源の分け方・出し方情報サイト（品目検索）",
+    "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E3%83%81%E3%83%A3%E3%82%A4%E3%83%AB%E3%83%89%E3%82%B7%E3%83%BC%E3%83%88",
+    "source_checked_at": "2026-09-21",
+    "data_status": "verified"
+  },
+  {
+    "id": "helmet",
+    "name": "ヘルメット",
+    "aliases": [],
+    "category": "moeru",
+    "disposal_method": "燃えるごみ",
+    "conditions": [
+      {
+        "condition": "FRP製の場合",
+        "disposal_method": "燃えないごみ"
+      }
+    ],
+    "municipality_id": "fukuoka-city",
+    "description": "プラスチック製のヘルメットは「燃えるごみ」として出してください。",
+    "notes": "FRP製のヘルメットは「燃えないごみ」です。",
+    "source_title": "ヘルメット｜福岡市ごみと資源の分け方・出し方情報サイト（品目検索）",
+    "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E3%83%98%E3%83%AB%E3%83%A1%E3%83%83%E3%83%88",
     "source_checked_at": "2026-09-21",
     "data_status": "verified"
   }

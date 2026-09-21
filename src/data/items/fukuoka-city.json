@@ -2383,7 +2383,7 @@
   {
     "id": "fishing-rod",
     "name": "釣り竿",
-    "aliases": [],
+    "aliases": ["釣竿", "つり竿", "つりざお"],
     "category": "moeru",
     "disposal_method": "燃えるごみ",
     "conditions": [

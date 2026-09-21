@@ -216,7 +216,7 @@
   {
     "id": "mobile-battery",
     "name": "モバイルバッテリー",
-    "aliases": ["携帯充電器", "モバイル充電器"],
+    "aliases": ["モバイル充電器"],
     "category": "kogata-kaden",
     "disposal_method": "小型充電式電池回収へ",
     "municipality_id": "fukuoka-city",

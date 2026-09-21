@@ -52,6 +52,11 @@ const SEARCH_DISAMBIGUATION_EXCLUDE_IDS: Record<string, string[]> = {
   [normalizeQuery("衣類")]: ["washing-machine", "iron"],
   [normalizeQuery("ホットプレート")]: ["plate"],
   [normalizeQuery("プレート")]: ["hot-plate"],
+  [normalizeQuery("クーラーボックス")]: ["air-conditioner"],
+  [normalizeQuery("クーラーバッグ")]: ["air-conditioner"],
+  [normalizeQuery("クーラーパック")]: ["air-conditioner"],
+  [normalizeQuery("クーラーケース")]: ["air-conditioner"],
+  [normalizeQuery("ウォータークーラー")]: ["air-conditioner"],
 };
 
 export function isSearchDisambiguationExcluded(itemId: string, normalizedQuery: string): boolean {

@@ -1254,7 +1254,7 @@
   {
     "id": "soil",
     "name": "土",
-    "aliases": ["つち", "植木鉢の土"],
+    "aliases": ["つち"],
     "category": "moenai",
     "disposal_method": "燃えないごみ",
     "municipality_id": "fukuoka-city",

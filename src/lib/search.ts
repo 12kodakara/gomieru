@@ -49,6 +49,9 @@ const SEARCH_DISAMBIGUATION_EXCLUDE_IDS: Record<string, string[]> = {
   [normalizeQuery("デスクトップパソコン")]: ["desk"],
   [normalizeQuery("ノート")]: ["pc"],
   [normalizeQuery("ノートパソコン")]: ["notebook"],
+  [normalizeQuery("衣類")]: ["washing-machine", "iron"],
+  [normalizeQuery("ホットプレート")]: ["plate"],
+  [normalizeQuery("プレート")]: ["hot-plate"],
 };
 
 export function isSearchDisambiguationExcluded(itemId: string, normalizedQuery: string): boolean {

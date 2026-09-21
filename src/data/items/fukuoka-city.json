@@ -2274,7 +2274,7 @@
   {
     "id": "calculator",
     "name": "電卓",
-    "aliases": [],
+    "aliases": ["計算機"],
     "category": "kogata-kaden",
     "disposal_method": "小型家電回収ボックスへ",
     "conditions": [

@@ -129,7 +129,7 @@
   {
     "id": "pc",
     "name": "パソコン",
-    "aliases": ["PC", "デスクトップパソコン", "ノートパソコン"],
+    "aliases": ["PC", "デスクトップパソコン", "ノートパソコン", "ラップトップ"],
     "category": "not-collected",
     "disposal_method": "メーカー・リネットジャパンへ回収を依頼",
     "municipality_id": "fukuoka-city",
@@ -520,7 +520,7 @@
   {
     "id": "kitchen-waste",
     "name": "生ごみ",
-    "aliases": ["調理くず", "食品ごみ"],
+    "aliases": ["調理くず", "食品ごみ", "なまごみ"],
     "category": "moeru",
     "disposal_method": "燃えるごみ",
     "municipality_id": "fukuoka-city",
@@ -940,7 +940,7 @@
   {
     "id": "clock",
     "name": "時計",
-    "aliases": ["掛け時計", "置き時計"],
+    "aliases": ["掛け時計", "置き時計", "とけい"],
     "category": "kogata-kaden",
     "disposal_method": "小型家電回収ボックスへ",
     "conditions": [
@@ -1064,7 +1064,7 @@
   {
     "id": "humidifier",
     "name": "加湿器",
-    "aliases": [],
+    "aliases": ["かしつき"],
     "category": "moenai",
     "disposal_method": "燃えないごみ",
     "conditions": [
@@ -1220,7 +1220,7 @@
   {
     "id": "flower-pot",
     "name": "植木鉢",
-    "aliases": ["鉢"],
+    "aliases": ["鉢", "うえきばち"],
     "category": "moenai",
     "disposal_method": "燃えないごみ",
     "conditions": [
@@ -1282,7 +1282,7 @@
   {
     "id": "lumber",
     "name": "木材",
-    "aliases": ["材木", "廃材"],
+    "aliases": ["材木", "廃材", "もくざい"],
     "category": "moeru",
     "disposal_method": "燃えるごみ",
     "conditions": [
@@ -1673,7 +1673,7 @@
   {
     "id": "bathroom-scale",
     "name": "体重計",
-    "aliases": ["ヘルスメーター"],
+    "aliases": ["ヘルスメーター", "たいじゅうけい"],
     "category": "moenai",
     "disposal_method": "燃えないごみ",
     "municipality_id": "fukuoka-city",
@@ -1722,7 +1722,7 @@
   {
     "id": "wifi-router",
     "name": "Wi-Fiルーター",
-    "aliases": ["ワイファイルーター", "無線LANルーター"],
+    "aliases": ["ワイファイルーター", "無線LANルーター", "wifi"],
     "category": "kogata-kaden",
     "disposal_method": "小型家電回収ボックスへ",
     "conditions": [

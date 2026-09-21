@@ -25,7 +25,7 @@
   {
     "id": "microwave",
     "name": "電子レンジ",
-    "aliases": ["でんしれんじ", "レンジ", "オーブンレンジ"],
+    "aliases": ["でんしれんじ", "オーブンレンジ"],
     "category": "moenai",
     "disposal_method": "燃えないごみ",
     "conditions": [

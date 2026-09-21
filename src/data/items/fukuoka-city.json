@@ -1220,7 +1220,7 @@
   {
     "id": "flower-pot",
     "name": "植木鉢",
-    "aliases": ["鉢", "うえきばち"],
+    "aliases": ["うえきばち"],
     "category": "moenai",
     "disposal_method": "燃えないごみ",
     "conditions": [

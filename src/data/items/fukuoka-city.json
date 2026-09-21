@@ -2568,5 +2568,45 @@
     "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E3%81%99%E3%81%A0%E3%82%8C",
     "source_checked_at": "2026-09-22",
     "data_status": "verified"
+  },
+  {
+    "id": "vase",
+    "name": "花瓶",
+    "aliases": [],
+    "category": "moenai",
+    "disposal_method": "燃えないごみ",
+    "conditions": [
+      {
+        "condition": "プラスチック製の場合",
+        "disposal_method": "燃えるごみ"
+      }
+    ],
+    "municipality_id": "fukuoka-city",
+    "description": "ガラス製・陶器製の花瓶は「燃えないごみ」として出してください。",
+    "notes": "割れたもの・割れやすいものは厚い紙で包み、「危険」と表示してから出してください。プラスチック製の花瓶は「燃えるごみ」です。",
+    "source_title": "花瓶｜福岡市ごみと資源の分け方・出し方情報サイト（品目検索）",
+    "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E8%8A%B1%E7%93%B6",
+    "source_checked_at": "2026-09-22",
+    "data_status": "verified"
+  },
+  {
+    "id": "step-ladder",
+    "name": "脚立",
+    "aliases": [],
+    "category": "sodai",
+    "disposal_method": "粗大ごみ",
+    "conditions": [
+      {
+        "condition": "指定袋に入って口が結べる大きさ・重さの場合",
+        "disposal_method": "燃えないごみ"
+      }
+    ],
+    "municipality_id": "fukuoka-city",
+    "description": "「粗大ごみ」として出してください。",
+    "notes": "指定袋に入って口が結べる大きさ・重さであれば「燃えないごみ」として出せます。",
+    "source_title": "脚立｜福岡市ごみと資源の分け方・出し方情報サイト（品目検索）",
+    "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E8%84%9A%E7%AB%8B",
+    "source_checked_at": "2026-09-22",
+    "data_status": "verified"
   }
 ]

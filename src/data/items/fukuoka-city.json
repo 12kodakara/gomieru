@@ -235,7 +235,7 @@
   {
     "id": "dry-battery",
     "name": "乾電池",
-    "aliases": ["かんでんち", "単三電池", "単四電池"],
+    "aliases": ["かんでんち", "単三電池", "単四電池", "単1電池", "単2電池", "単3電池", "単4電池", "単5電池"],
     "category": "moenai",
     "disposal_method": "燃えないごみ",
     "conditions": [
@@ -1767,7 +1767,7 @@
   {
     "id": "rechargeable-battery",
     "name": "充電式電池",
-    "aliases": ["ニカド電池", "ニッケル水素電池"],
+    "aliases": ["ニカド電池", "ニッケル水素電池", "リチウムイオン電池"],
     "category": "not-collected",
     "disposal_method": "小型充電式電池回収へ",
     "municipality_id": "fukuoka-city",

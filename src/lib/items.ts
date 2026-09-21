@@ -77,8 +77,8 @@ const RELATED_ITEM_CLUSTERS: string[][] = [
   ["microwave", "rice-cooker", "toaster", "hot-plate"],
   // パソコン本体と周辺機器(パソコンはnot-collected、他はmoenai/kogata-kadenとカテゴリをまたぐ)
   ["pc", "printer", "usb-memory", "wifi-router"],
-  // 電池類(乾電池はmoenai、充電式電池はnot-collectedで処分方法が異なるため併記が特に有用)
-  ["dry-battery", "rechargeable-battery"],
+  // 電池類(乾電池はmoenai、充電式電池・ボタン電池はnot-collectedで処分方法が異なるため併記が特に有用)
+  ["dry-battery", "rechargeable-battery", "button-battery"],
   // 音響・楽器機器(エレキギター/お風呂のふた等と同じsodaiだが、用途が近いものだけを厳選)
   ["electric-guitar", "audio-rack", "amplifier"],
   // 照明(電球・LED電球はmoenai同士で名称も一部重なるが、蛍光管も含めて明示的にまとめる)

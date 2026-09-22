@@ -53,7 +53,7 @@ const SEARCH_DISAMBIGUATION_EXCLUDE_IDS: Record<string, string[]> = {
   [normalizeQuery("ホットプレート")]: ["plate"],
   [normalizeQuery("プレート")]: ["hot-plate"],
   [normalizeQuery("クーラーボックス")]: ["air-conditioner"],
-  [normalizeQuery("クーラーバッグ")]: ["air-conditioner"],
+  [normalizeQuery("クーラーバッグ")]: ["air-conditioner", "bag"],
   [normalizeQuery("クーラーパック")]: ["air-conditioner"],
   [normalizeQuery("クーラーケース")]: ["air-conditioner"],
   [normalizeQuery("ウォータークーラー")]: ["air-conditioner"],

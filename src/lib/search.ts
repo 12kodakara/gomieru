@@ -32,9 +32,21 @@ export function normalizeQuery(value: string): string {
   return toHiragana(value.normalize("NFKC")).trim().toLowerCase().replace(/\s+/g, "");
 }
 
+/**
+ * 1文字(品目名またはalias)は完全一致の場合だけマッチさせる。
+ * 「石」が「石油ファンヒーター」のような無関係な複合語に部分一致してしまう
+ * ような誤誘導を防ぐための一般ルール。特定の品目名をハードコードするのでは
+ * なく、候補の文字数だけで判定するため、将来1文字の品目・aliasが増えても
+ * 自動的に適用される。2文字以上の候補は従来通り双方向の部分一致を許可する。
+ */
 function isMatch(item: WasteItem, query: string): boolean {
   const candidates = [item.name, ...item.aliases].map(normalizeQuery);
-  return candidates.some((candidate) => candidate.includes(query) || query.includes(candidate));
+  return candidates.some((candidate) => {
+    if (Array.from(candidate).length === 1) {
+      return candidate === query;
+    }
+    return candidate.includes(query) || query.includes(candidate);
+  });
 }
 
 /**

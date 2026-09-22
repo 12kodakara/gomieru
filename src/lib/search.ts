@@ -57,6 +57,7 @@ const SEARCH_DISAMBIGUATION_EXCLUDE_IDS: Record<string, string[]> = {
   [normalizeQuery("クーラーパック")]: ["air-conditioner"],
   [normalizeQuery("クーラーケース")]: ["air-conditioner"],
   [normalizeQuery("ウォータークーラー")]: ["air-conditioner"],
+  [normalizeQuery("クーラー")]: ["cooler-box"],
 };
 
 export function isSearchDisambiguationExcluded(itemId: string, normalizedQuery: string): boolean {

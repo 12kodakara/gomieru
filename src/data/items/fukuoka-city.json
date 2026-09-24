@@ -2880,5 +2880,19 @@
     "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E3%83%8F%E3%83%AD%E3%82%B2%E3%83%B3%E3%83%92%E3%83%BC%E3%82%BF%E3%83%BC",
     "source_checked_at": "2026-09-23",
     "data_status": "verified"
+  },
+  {
+    "id": "power-tool",
+    "name": "電動工具",
+    "aliases": [],
+    "category": "moenai",
+    "disposal_method": "燃えないごみ",
+    "municipality_id": "fukuoka-city",
+    "description": "「燃えないごみ」として出してください。",
+    "notes": "特記事項はありません。",
+    "source_title": "電動工具｜福岡市ごみと資源の分け方・出し方情報サイト（品目検索）",
+    "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E9%9B%BB%E5%8B%95%E5%B7%A5%E5%85%B7",
+    "source_checked_at": "2026-09-23",
+    "data_status": "verified"
   }
 ]

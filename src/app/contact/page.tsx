@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageShell from "@/components/PageShell";
-import { CONTACT_EMAIL, SITE_NAME, buildOpenGraph } from "@/lib/site";
+import { CONTACT_FORM_URL, SITE_NAME, buildOpenGraph } from "@/lib/site";
 
 const TITLE = "お問い合わせ";
-const DESCRIPTION = `${SITE_NAME}の掲載情報についてのご指摘・お問い合わせ方法をご案内します。`;
+const DESCRIPTION = `${SITE_NAME}の掲載内容へのご質問、情報の修正依頼、不具合のご報告などを受け付けるお問い合わせフォームのご案内です。`;
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -23,35 +24,45 @@ export default function ContactPage() {
         <div className="mt-6 space-y-6 text-sm leading-relaxed text-gray-700">
         <section>
           <h2 className="text-base font-bold text-gray-900">お問い合わせいただける内容</h2>
-          <p className="mt-2">「{SITE_NAME}」に関する、以下のようなお問い合わせを受け付けています。</p>
+          <p className="mt-2">「{SITE_NAME}」に関する、以下のようなお問い合わせをお問い合わせフォームで受け付けています。</p>
           <ul className="mt-2 list-disc space-y-1 pl-5">
-            <li>掲載している情報の誤りについてのご指摘</li>
-            <li>分類・捨て方についての情報修正のご依頼</li>
-            <li>サイトの使い方など、サイトそのものに関するお問い合わせ</li>
+            <li>掲載内容についてのご質問</li>
+            <li>分類・捨て方など、掲載情報の修正のご依頼</li>
+            <li>表示の崩れやリンク切れなど、不具合のご報告</li>
+            <li>その他、サイトに関するお問い合わせ</li>
           </ul>
         </section>
 
-        {CONTACT_EMAIL ? (
-          <section>
-            <h2 className="text-base font-bold text-gray-900">お問い合わせ先</h2>
-            <p className="mt-2">下記のメールアドレスまでご連絡ください。</p>
-            <p className="mt-2">
-              <a
-                href={`mailto:${CONTACT_EMAIL}`}
-                className="font-semibold text-green-700 underline underline-offset-2 hover:text-green-800"
-              >
-                {CONTACT_EMAIL}
-              </a>
-            </p>
-          </section>
-        ) : (
-          <section>
-            <h2 className="text-base font-bold text-gray-900">お問い合わせ先</h2>
-            <p className="mt-2">
-              現在、お問い合わせ窓口を準備中です。お手数をおかけしますが、しばらくお待ちください。
-            </p>
-          </section>
-        )}
+        <section>
+          <h2 className="text-base font-bold text-gray-900">お問い合わせ方法</h2>
+          <p className="mt-2">
+            下のボタンから、Googleフォームのお問い合わせページ（外部サイト）へ移動します。内容をご入力のうえ送信してください。
+          </p>
+          <p className="mt-4">
+            <a
+              href={CONTACT_FORM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-12 w-full items-center justify-center gap-1 rounded-lg bg-green-700 px-6 py-3 text-base font-bold text-white shadow-sm hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700 sm:w-auto"
+            >
+              お問い合わせフォームを開く
+              <span aria-hidden="true">↗</span>
+              <span className="sr-only">(外部サイトのGoogleフォームが新しいタブで開きます)</span>
+            </a>
+          </p>
+          <p className="mt-2 text-xs text-gray-500">Googleフォームが新しいタブで開きます。</p>
+          <ul className="mt-4 list-disc space-y-1 pl-5 text-gray-600">
+            <li>お名前・メールアドレスの入力は任意です。返信をご希望の場合は、メールアドレスをご入力ください。</li>
+            <li>いただいた内容は確認のうえ、必要に応じて対応します。内容によっては返信・対応できない場合があります。あらかじめご了承ください。</li>
+            <li>
+              ご入力いただいた情報の取り扱いについては、
+              <Link href="/privacy/" className="text-green-700 underline underline-offset-2 hover:text-green-800">
+                プライバシーポリシー
+              </Link>
+              をご確認ください。
+            </li>
+          </ul>
+        </section>
 
         <section className="border-l-2 border-amber-500 pl-3">
           <h2 className="text-base font-bold text-gray-900">ごみの収集日・個別のごみ処理についてのご質問</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import PageShell from "@/components/PageShell";
 import { SITE_NAME, buildOpenGraph } from "@/lib/site";
@@ -53,6 +54,13 @@ export default function AboutPage() {
             <h2 className="text-base font-bold text-gray-900">運営について</h2>
             <p className="mt-2">
               「{SITE_NAME}」は、自治体・行政機関が運営する公式サイトではありません。個人・民間による情報提供サイトです。
+            </p>
+            <p className="mt-2">
+              掲載内容の誤りのご指摘や情報の修正依頼、不具合のご報告は、
+              <Link href="/contact/" className="text-green-700 underline underline-offset-2 hover:text-green-800">
+                お問い合わせページ
+              </Link>
+              のお問い合わせフォームからお寄せください。
             </p>
           </section>
         </div>

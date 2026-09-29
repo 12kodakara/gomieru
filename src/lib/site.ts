@@ -28,8 +28,9 @@ export const DISCLAIMER_TEXT =
   "ごみの分別・回収方法は変更される場合があります。最終的な判断は自治体公式情報をご確認ください。";
 
 /**
- * お問い合わせ先メールアドレス。未設定（空文字）の場合、お問い合わせページは
- * メールリンクを表示せず、その旨を案内する。実アドレスが決まったら
- * 環境変数 NEXT_PUBLIC_CONTACT_EMAIL を設定するか、ここに直接入れる。
+ * お問い合わせ窓口（Googleフォームの回答用URL）。個人メールアドレスは公開しない方針のため、
+ * 問い合わせはこのフォームに一本化している。共有ダイアログが付与する ?usp=publish-editor は
+ * 公開には不要な計測用パラメータなので付けない。
  */
-export const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "";
+export const CONTACT_FORM_URL =
+  "https://docs.google.com/forms/d/e/1FAIpQLScGWA5gztNpJL-jh9lPikP6Wm3S6aOoDP40rYrec_QgHU_bOg/viewform";

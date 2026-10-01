@@ -52,6 +52,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ja" className={`h-full ${bizUDPGothic.variable}`}>
+      <head>
+        {/* Google AdSense（サイト所有権確認用）。全ページ共通のためルートレイアウトに置く。 */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7076920165915227"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
       <body className="flex min-h-full flex-col bg-white font-sans text-gray-900 antialiased">
         <Header />
         <main className="flex-1">{children}</main>

@@ -119,6 +119,11 @@ export interface WasteItem {
   notes: string;
   alternatives?: string;
   steps?: string[];
+  /**
+   * 品目ページの meta description を品目固有の文章で上書きする場合のみ設定する（任意）。
+   * 未設定の品目は共通テンプレートの文章のまま。公式情報で確認できる内容だけを書くこと。
+   */
+  meta_description?: string;
   /** @deprecated source_url を優先。既存データ互換のため残置 */
   official_url?: string;
   /** @deprecated source_checked_at を優先。既存データ互換のため残置 */

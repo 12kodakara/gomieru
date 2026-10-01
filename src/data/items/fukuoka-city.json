@@ -788,11 +788,16 @@
     "disposal_method": "粗大ごみ",
     "municipality_id": "fukuoka-city",
     "description": "「粗大ごみ」として出してください。",
+    "steps": [
+      "机の種類を確認する。インターネット受付の品目一覧では、両袖机は1,000円、それ以外の机は500円で、イスは別料金になる",
+      "粗大ごみとして申し込み、案内された金額の粗大ごみ処理券を購入する",
+      "粗大ごみ処理券に受付番号または名前を書いて貼り、収集日の朝8時30分までに指定された場所に出す"
+    ],
     "municipality_rule_refs": ["bulkyWaste"],
     "notes": "サイズによる例外は、確認できた公式ページには明記がありませんでした。",
     "source_title": "机｜福岡市ごみと資源の分け方・出し方情報サイト（品目検索）",
     "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E6%9C%BA",
-    "source_checked_at": "2026-09-12",
+    "source_checked_at": "2026-10-01",
     "data_status": "verified"
   },
   {
@@ -1842,10 +1847,15 @@
     "municipality_rule_refs": ["bulkyWaste"],
     "municipality_id": "fukuoka-city",
     "description": "「粗大ごみ」として出してください。",
+    "steps": [
+      "こたつ布団は本体とは別の品目として処分する(指定袋に入って口が結べる大きさ・重さなら「燃えるごみ」、入らない場合は「粗大ごみ」)",
+      "こたつ本体を粗大ごみとして申し込む。天板は本体と一緒に出せる(インターネット受付の品目一覧では「こたつ(天板を含む)」300円)",
+      "粗大ごみ処理券に受付番号または名前を書いて貼り、収集日の朝8時30分までに指定された場所に出す"
+    ],
     "notes": "こたつのヒーター(電熱部分)は別区分の「燃えないごみ」、こたつ布団はさらに別品目として「粗大ごみ」(指定袋に入る大きさ・重さであれば「燃えるごみ」)の扱いです。",
     "source_title": "こたつ｜福岡市ごみと資源の分け方・出し方情報サイト（品目検索）",
     "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E3%81%93%E3%81%9F%E3%81%A4",
-    "source_checked_at": "2026-09-21",
+    "source_checked_at": "2026-10-01",
     "data_status": "verified"
   },
   {
@@ -2091,10 +2101,16 @@
     ],
     "municipality_id": "fukuoka-city",
     "description": "「粗大ごみ」として出してください。",
+    "steps": [
+      "電気コードが簡単に取り外せる場合は外し、コードは「燃えないごみ」に出す",
+      "本体が指定袋に入って口が結べる大きさで、重さで袋が破れない場合は「燃えるごみ」として出す",
+      "袋に入らない場合は、電話(092-731-1153)・インターネット・LINEのいずれかで粗大ごみ受付に申し込む(インターネット受付の品目一覧では「ホットカーペット(上敷きを含む)」300円)",
+      "コンビニ等で粗大ごみ処理券を購入し(LINE受付の場合はオンライン決済も可)、受付番号または名前を書いて貼り、収集日の朝8時30分までに指定された場所に出す"
+    ],
     "notes": "電気コードが簡単に分離できる場合は、コードは「燃えないごみ」に入れてください。",
     "source_title": "電気カーペット｜福岡市ごみと資源の分け方・出し方情報サイト（品目検索）",
     "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E9%9B%BB%E6%B0%97%E3%82%AB%E3%83%BC%E3%83%9A%E3%83%83%E3%83%88",
-    "source_checked_at": "2026-09-21",
+    "source_checked_at": "2026-10-01",
     "data_status": "verified"
   },
   {
@@ -2776,10 +2792,16 @@
     ],
     "municipality_id": "fukuoka-city",
     "description": "「粗大ごみ」として出してください。",
+    "steps": [
+      "指定袋に入って口が結べる大きさで、重さで袋が破れない場合は「燃えないごみ」として出す",
+      "袋に入らない場合は、電話(092-731-1153)・インターネット・LINEのいずれかで粗大ごみ受付に申し込む(インターネット受付の品目一覧では「ストーブ(ファンヒーター)」300円)",
+      "石油ファンヒーターを粗大ごみに出す場合は、灯油を抜いておく(抜いた灯油は市では収集しないため、販売店などに相談する)",
+      "コンビニ等で粗大ごみ処理券を購入し(LINE受付の場合はオンライン決済も可)、受付番号または名前を書いて貼り、収集日の朝8時30分までに指定された場所に出す"
+    ],
     "notes": "指定袋に入って口が結べる大きさ・重さであれば「燃えないごみ」として出せます。",
     "source_title": "ファンヒーター｜福岡市ごみと資源の分け方・出し方情報サイト（品目検索）",
     "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E3%83%95%E3%82%A1%E3%83%B3%E3%83%92%E3%83%BC%E3%82%BF%E3%83%BC",
-    "source_checked_at": "2026-09-22",
+    "source_checked_at": "2026-10-01",
     "data_status": "verified"
   },
   {
@@ -2818,11 +2840,16 @@
     "disposal_method": "粗大ごみ",
     "municipality_id": "fukuoka-city",
     "description": "「粗大ごみ」として出してください。",
+    "steps": [
+      "粗大ごみとして申し込む。インターネット受付の品目一覧では「エレクトーン・電子ピアノ」は1,000円で、イスを一緒に出す場合はイスは別料金になる",
+      "粗大ごみ処理券に受付番号または名前を書いて貼り、収集日の朝8時30分までに指定された場所に出す",
+      "重くて自分で運び出せない場合、65歳以上の方・障がいのある方などは有料の「粗大ごみ持ち出しサービス」を利用できる(電話受付のみ。対象や条件は粗大ごみ受付センターに確認する)"
+    ],
     "municipality_rule_refs": ["bulkyWaste"],
     "notes": "特記事項はありません。",
     "source_title": "電子ピアノ｜福岡市ごみと資源の分け方・出し方情報サイト（品目検索）",
     "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E9%9B%BB%E5%AD%90%E3%83%94%E3%82%A2%E3%83%8E",
-    "source_checked_at": "2026-09-23",
+    "source_checked_at": "2026-10-01",
     "data_status": "verified"
   },
   {

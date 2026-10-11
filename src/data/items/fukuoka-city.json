@@ -381,10 +381,11 @@
       "それぞれをひもで十字にしばる",
       "地域集団回収または資源物回収拠点へ出す"
     ],
-    "notes": "汚れやにおいのついた紙はリサイクルできないため「燃えるごみ」として出してください。",
+    "notes": "汚れやにおいのついた紙はリサイクルできないため「燃えるごみ」として出してください。お住まいの近くの資源物回収拠点は、福岡市の資源物回収拠点検索で調べられます。",
+    "meta_description": "福岡市で段ボールを捨てる場合は、新聞紙・雑がみと分けてひもで十字にしばり、地域集団回収または資源物回収拠点へ出します。拠点の場所は福岡市の資源物回収拠点検索で確認できます。",
     "source_title": "古紙｜福岡市ごみと資源の分け方・出し方情報サイト",
     "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/division:5",
-    "source_checked_at": "2026-09-12",
+    "source_checked_at": "2026-10-11",
     "data_status": "verified"
   },
   {
@@ -888,9 +889,10 @@
     "municipality_id": "fukuoka-city",
     "description": "基本は「粗大ごみ」ですが、材質とサイズによって「燃えるごみ」「燃えないごみ」として出せる場合があります。",
     "notes": "指定袋に入るかどうかは実際のサイズ・重さでご判断ください。",
+    "meta_description": "福岡市でカラーボックスを捨てる場合、基本は「粗大ごみ」です。指定袋に入る大きさなら金属製は「燃えないごみ」、木製・プラスチック製は「燃えるごみ」として出せます。",
     "source_title": "カラーボックス｜福岡市ごみと資源の分け方・出し方情報サイト（品目検索）",
     "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E3%82%AB%E3%83%A9%E3%83%BC%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9",
-    "source_checked_at": "2026-09-12",
+    "source_checked_at": "2026-10-11",
     "data_status": "verified"
   },
   {
@@ -1308,9 +1310,10 @@
     "municipality_id": "fukuoka-city",
     "description": "「材木」として「燃えるごみ」に出せます。",
     "notes": "特記事項はありません。",
-    "source_title": "さ行｜福岡市ごみと資源の分け方・出し方情報サイト（品目一覧）",
-    "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/syllabary:%E3%81%95",
-    "source_checked_at": "2026-09-21",
+    "meta_description": "福岡市で木材を捨てる場合、指定袋に入る大きさ・重さであれば「燃えるごみ」です。入らない場合は「粗大ごみ」として申し込みが必要です。",
+    "source_title": "木材｜福岡市ごみと資源の分け方・出し方情報サイト（品目検索）",
+    "source_url": "https://kateigomi-bunbetsu.city.fukuoka.lg.jp/items/index/keywords:%E6%9C%A8%E6%9D%90",
+    "source_checked_at": "2026-10-11",
     "data_status": "verified"
   },
   {

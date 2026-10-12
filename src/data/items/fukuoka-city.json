@@ -323,10 +323,11 @@
     "disposal_method": "燃えないごみ",
     "municipality_id": "fukuoka-city",
     "description": "「燃えないごみ」として出せます。指定袋からはみ出した状態で出してもかまいません。口はしっかり結んで出してください。",
-    "notes": "指定袋に入らない大きさ・重さのものは「粗大ごみ」として申し込みが必要です。",
+    "notes": "指定袋に入らない大きさ・重さのものは「粗大ごみ」として申し込みが必要です。布などの部分はついたままで出してかまいません。",
+    "meta_description": "福岡市で傘(雨傘・日傘)を捨てる場合は「燃えないごみ」です。布の部分はついたままで出せ、袋からはみ出してもかまいません。指定袋に入らない大きさの場合は粗大ごみになります。福岡市の公式情報をもとにまとめています。",
     "source_title": "燃えないごみの出し方 - 福岡市",
     "source_url": "https://www.city.fukuoka.lg.jp/kankyo/jigyokeigomi/life/katei-bunbetsu/moenaigomi.html",
-    "source_checked_at": "2026-09-12",
+    "source_checked_at": "2026-10-12",
     "data_status": "verified"
   },
   {

@@ -70,6 +70,11 @@ export default function SearchResults() {
               「ソファ」→「ソファー」のように、別の呼び方でも検索してみてください。
             </p>
             <p className="mt-1 text-sm text-gray-500">最終的な分別方法は福岡市公式サイトでも確認できます。</p>
+            <p className="mt-3 text-sm">
+              <Link href="/fukuoka/fukuoka-city/list/" className="text-green-700 underline underline-offset-2 hover:text-green-800">
+                福岡市の品目一覧から探す
+              </Link>
+            </p>
           </div>
         )}
       </div>

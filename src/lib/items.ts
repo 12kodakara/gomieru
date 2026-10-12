@@ -83,6 +83,12 @@ const RELATED_ITEM_CLUSTERS: string[][] = [
   ["electric-guitar", "audio-rack", "amplifier"],
   // 照明(電球・LED電球はmoenai同士で名称も一部重なるが、蛍光管も含めて明示的にまとめる)
   ["light-bulb", "led-bulb", "fluorescent-tube"],
+  // 暖房器具(ファンヒーター・オイルヒーターはsodai、ハロゲンヒーターはmoenaiとカテゴリをまたぐが、冬場にまとめて処分を検討しやすい)
+  ["fan-heater", "oil-heater", "halogen-heater"],
+  // 調理器具(いずれもmoenai。買い替え時にまとめて処分を検討しやすい)
+  ["frying-pan", "pot", "kettle", "kitchen-knife"],
+  // 食器(いずれもmoenai。欠け・割れを機にまとめて処分を検討しやすい)
+  ["cup", "rice-bowl", "plate"],
 ];
 
 const relatedClusterByItemId = new Map<string, string[]>();
